@@ -1,0 +1,26 @@
+
+<app-header></app-header>
+
+<div class="d-flex justify-content-center align-items-center" >
+
+<div class="container">
+    <h1>Login</h1>
+    <hr style="margin-bottom: 20px;">
+    <div class="d-flex justify-content-center align-items-center">
+      <form class="text-center">
+        <div class="form-group" style="margin-bottom:20px;">
+          <label for="username" style="margin-bottom:20px;">Username</label>
+          <input type="text" class="form-control" id="username" [(ngModel)]="email" name="email"> 
+        </div>
+        <div class="form-group">
+          <label for="password" style="margin-bottom:20px;">Password</label>
+          <input type="password" class="form-control" id="password" [(ngModel)]="mdp" name="password">
+        </div>
+        <div class="form-group" >
+          <button routerLink="/inscri" type="button" class="btn btn-secondary m-2" style="margin-bottom:20px;">inscrivez-vous? cree un compte</button>
+          <input type="submit" class="btn btn-primary m-2" value="Login" (click)="login()">
+        </div>
+      </form>
+    </div>
+  </div>
+  </div>

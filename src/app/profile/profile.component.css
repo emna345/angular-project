@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+ form {
+  background-size: cover;
+    width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+ 
+  }
+ 
+
+  h1{
+    margin-top: 10px;
+    margin-bottom: 15px;
+    font-size: 20px;
+    color: #110000;
+    text-transform: uppercase;
+    margin-left: 380px;
+    font-family: 'Raleway', sans-serif;
+    letter-spacing: 0.3em;
+  }
+  
+
+  label {
+   
+    color: #383434;
+    margin-top: 19px;
+  }
+  
+ 
+  .mb-3 {
+    margin-bottom: 20px;
+  }
+  
+
+  .form-control {
+    width: 450px;
+    height: 40px;
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid #ccc;
+    padding: 8px;
+    font-size: 16px;
+    color: #555;
+    background-color: transparent;
+    transition: border-color 0.3s ease;
+    margin-bottom: 20px;
+  }
+ 
+  .form-control:focus {
+    outline: none;
+    border-color: #f0f0f0;
+  }
+  
+
+  .btn-primary {
+    display: inline-block;
+  
+    background-color: #000000;
+    border: none;
+    color: #ffffff;
+    text-transform: uppercase;
+    margin-left: 800px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-right: 10px;
+  }
+  
+  
+  .btn-primary:hover
+   {
+    background-color: #0069d9;
+  } 
+
+
+  
+   
+  .bg-white{
+    background-image: url('/assets/backprof.jpg');
+    background-position: center;
+     background-size: cover;
+  }
+  
+  
+  header{
+    height: 50vh;
+  }
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background-color: transparent;
+  
+  }
+  
+  .navbar-brand {
+    font-size: 27 px;
+    color: rgb(255, 255, 255);
+    font-family: 'Raleway', sans-serif;
+    
+  }
+  
+  
+  
+  .nav-link {
+    display: inline-block; 
+    white-space: nowrap;
+    color: #693b5f;
+    border-radius: 20px;
+    margin-left: -30px;
+    margin-right: 50px;
+    font-size: 12px;
+    padding: -10px;
+    cursor: pointer;
+    text-transform:capitalize;
+  }
+  
+  .nav-link.active {
+    color: rgb(0, 0, 0);
+  }
+ 
+
+
+  /* CSS for navbar */
+  .navbar-nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  
+  .navbar-nav .nav-item {
+    margin-left: 10px;
+  }

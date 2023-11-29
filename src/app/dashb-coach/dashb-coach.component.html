@@ -1,0 +1,41 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-3 sidebar  position-fixed">
+      <div class="d-flex flex-column align-items-center">
+      <div class="profile-image">
+        <img src="/../assets/u.png" alt="Profile Image" class="rounded-circle" style="width: 120px; height: 120px;">
+      </div></div>
+      <div>
+        <h5 style="margin-left: 20px;">{{this.user.nom}} {{this.user.prenom}}</h5>
+      </div>
+      <hr>
+      <ul class="nav flex-column" style="margin-top: 30px;">
+        <li class="nav-item">
+          <a class="nav-link active" (click)="goTohome()"><i class="fas fa-home"></i> Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="goToDossiermedical()"><i class="fas fa-calendar-alt"></i> Dossier Medical</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="goTotableau()"><i class="fas fa-calendar"></i> tableau d'Athlete</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="goToprofile()"><i class="fas fa-user"></i> Profile</a>
+        </li>
+        <hr>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/login"><i class="fas fa-sign-out-alt"></i> Log out</a>
+        </li>
+      </ul>
+    </div>
+    <div class="col-9 offset-3 main-content">
+    
+      <h1 class="h2 mb-3">Dashboard</h1>
+      <main class="pt-5">
+        <div class="content">
+          <ng-container *ngComponentOutlet="currentComponent"></ng-container>
+        </div>
+      </main>
+    </div>
+  </div>
+</div>

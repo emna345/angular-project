@@ -1,0 +1,214 @@
+<nav class="navbar navbar-expand-lg navbar-light">
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+    <div class="row">
+      <div class="mb-3 row">
+        <div class="col-md-6">
+    <select class="custom-select" [(ngModel)]="selectedUserIds" (change)="onSelectUser()">
+      <option *ngIf="!selectAllAthletes" value="none" selected>Selectionner un athlète</option>
+      <option *ngIf="selectAllAthletes" [value]="'all'">Tous les athlètes</option>
+      <option *ngFor="let user of users" [value]="user.id">{{user.nom}}&nbsp;{{user.prenom}}</option>
+    </select></div>
+    <div class="mb-3 row">
+    <div class="col-md-6">
+      <label class="form-label">Date</label>
+      <input type="date"  [(ngModel)]="dateplaning" [ngModelOptions]="{standalone: true}">
+    </div></div>
+    <div class="mb-3 row">
+    <div class="col-md-4">
+    <button class="btn btn-next"(click)="open(modalContent)">
+      mise à jour
+            </button></div></div>
+    </div>
+  </div>
+  </div>
+</nav>
+
+
+<div class="container" style="margin-bottom: 50px; margin-top: 50px;">
+  <div class="row">
+
+      <form class="">
+       
+        <div class="mb-4 d-flex align-items-center">
+          <h2 style="margin-right: 20px;">Horaire de sommeil</h2>
+       
+        </div>
+       
+        <div class="mb-3 row">
+          <div class="col-md-6">
+            <label for="testGlycineAgene" class="form-label" >Heure matin </label>
+            <input type="time" class="form-control"  [(ngModel)]="heurematin" [ngModelOptions]="{standalone: true}" name="heurematin" min="07:00" max="20:00" required>
+          </div>
+          <div class="col-md-6">
+            <label for="testGlycineAgene" class="form-label"  >Heure soir</label>
+            <input type="time" class="form-control"[(ngModel)]="heurenuit" [ngModelOptions]="{standalone: true}" min="07:00" max="20:00" required>
+          </div>
+        </div>
+
+        <div class="mb-4 d-flex align-items-center">
+          <h2 style="margin-right: 20px;">Temps de repas</h2>
+          
+        </div>
+      
+        <div class="mb-3 row">
+          <div class="col-md-4">
+            <label for="testGlycineAgene" class="form-label">Heure matin</label>
+            <input type="time" class="form-control"   [(ngModel)]="heureematin" [ngModelOptions]="{standalone: true}" min="07:00" max="20:00" required>
+          </div>
+          <div class="col-md-4">
+            <label for="testGlycineAgene" class="form-label">Heure apres-midi</label>
+            <input type="time" class="form-control"   [(ngModel)]="heureapremidi" [ngModelOptions]="{standalone: true}" min="07:00" max="20:00" required>
+          </div>
+          <div class="col-md-4">
+            <label for="testGlycineAgene" class="form-label">Heure soir </label>
+            <input type="time" class="form-control"  [(ngModel)]="heuresoir" [ngModelOptions]="{standalone: true}" min="07:00" max="20:00" required>
+          </div>
+        </div>
+
+       
+
+     
+
+          
+          <div class="mb-3 row">
+          <div class="mb-4 d-flex align-items-center">
+            <h2 style="margin-right: 20px;">Temps d'entrainement</h2>
+           
+           
+           
+          </div>
+  
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Heure</th>
+                  <th>Heure</th>
+               
+               
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let medication of medications; let i = index">
+                  <td><input type="time" placeholder="" [(ngModel)]="medication.heureentrain" [ngModelOptions]="{ standalone: true }" min="07:00" max="20:00" required></td>
+                  <td><input type="time" placeholder="" [(ngModel)]="medication.heureentrainement" [ngModelOptions]="{ standalone: true }"min="07:00" max="20:00" required></td>
+                  <td>
+                    <button class="btn btn-sm btn-danger" (click)="deleteMedication(i)">supprimer</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="3">
+                    <button class="btn btn-sm btn-success" (click)="addMedication()">ajouter</button>
+                  </td>
+                </tr>
+            
+              
+              </tbody>
+            </table>
+       
+          </div>
+        <div class="mb-3">
+          <button type="submit" class="btn btn-primary" (click)="envoyer()">Envoyer</button>
+        
+                        </div>
+      </form>
+    </div>
+
+</div>
+
+
+
+<ng-template #modalContent let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Modification</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form>
+  
+    
+      <div class="mb-4 d-flex align-items-center">
+        <h2 style="margin-right: 20px;">Horaire de sommeil</h2>
+     
+      </div>
+     
+      <div class="mb-3 row">
+        <div class="col-md-6">
+          <label for="testGlycineAgene" class="form-label" >Heure matin </label>
+          <input type="time" class="form-control"  [(ngModel)]="bilans.heurematin" [ngModelOptions]="{standalone: true}">
+        </div>
+        <div class="col-md-6">
+          <label for="testGlycineAgene" class="form-label"  >Heure soir</label>
+          <input type="time" class="form-control"[(ngModel)]="bilans.heurenuit" [ngModelOptions]="{standalone: true}">
+        </div>
+      </div>
+
+      <div class="mb-4 d-flex align-items-center">
+        <h2 style="margin-right: 20px;">Temps de repas</h2>
+        
+      </div>
+    
+      <div class="mb-3 row">
+        <div class="col-md-4">
+          <label for="testGlycineAgene" class="form-label">Heure matin</label>
+          <input type="time" class="form-control" style="width: 200px;"  [(ngModel)]="bilans.heureematin" [ngModelOptions]="{standalone: true}">
+        </div>
+        <div class="col-md-4">
+          <label for="testGlycineAgene" class="form-label">Heure apres-midi</label>
+          <input type="time" class="form-control" style="width: 200px;"  [(ngModel)]="bilans.heureapremidi" [ngModelOptions]="{standalone: true}">
+        </div>
+        <div class="col-md-4">
+          <label for="testGlycineAgene" class="form-label">Heure soir </label>
+          <input type="time" class="form-control" style="width: 200px;"  [(ngModel)]="bilans.heuresoir" [ngModelOptions]="{standalone: true}">
+        </div>
+      </div>
+
+     
+
+   
+
+        
+        <div class="mb-3 row">
+        <div class="mb-4 d-flex align-items-center">
+          <h2 style="margin-right: 20px;">Temps d'entrainement</h2>
+         
+         
+         
+        </div>
+
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Heure</th>
+                <th>Heure</th>
+             
+             
+              </tr>
+            </thead>
+            <tbody>
+              <tr >
+                <td><input type="time" placeholder="" [(ngModel)]="bilans.heureentrain" [ngModelOptions]="{ standalone: true }"></td>
+                <td><input type="time" placeholder="" [(ngModel)]="bilans.heureentrainement" [ngModelOptions]="{ standalone: true }"></td>
+              
+              </tr>
+           
+          
+            
+            </tbody>
+          </table>
+     
+        </div>
+      
+  
+
+</form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-primary" (click)="updateUser(selectedUserId)">Save</button>
+
+    <button type="button" class="btn btn-secondary" (click)="modal.close('Close click')">Close</button>
+  </div>
+</ng-template>
+       
+     

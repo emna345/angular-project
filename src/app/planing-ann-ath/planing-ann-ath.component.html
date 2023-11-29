@@ -1,0 +1,40 @@
+<div class="container">
+    <h4 style="margin-top: 30px;">Evenement</h4>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col"  style="text-align: center !important;">Type d'evenement</th>
+        <th scope="col"  style="text-align: center !important;">Lieu</th>
+        <th scope="col"  style="text-align: center !important;">Date</th>
+        <th scope="col" style="text-align: center !important;">Heure</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr *ngFor="let plan of plans">
+        <td style="text-align: center !important;">{{plan.typeVen}}</td>
+        <td style="text-align: center !important;">{{plan.lieuplan}}</td>
+        <td style="text-align: center !important;">{{plan.datePlan}}</td>
+        <td style="text-align: center !important;">{{plan.heurePlan}}</td>
+      </tr>
+      <!--ng-container *ngIf="userPlaningAnnuel; else noPlan">
+        <tr *ngFor="let plan of userPlaningAnnuel">
+          <td>{{ plan.typeVen }}</td>
+          <td>{{ plan.lieuplan }}</td>
+          <td>{{ plan.datePlan }}</td>
+          <td>{{ plan.heurePlan }}</td>
+        </tr>
+      </ng-container-->
+      <!--ng-template #noPlan>
+        <tr>
+          <td colspan="4">Pas de plan annuel disponible pour l'utilisateur.</td>
+        </tr>
+      </ng-template--->
+
+    </tbody>
+      
+  
+</table>
+
+
+</div>

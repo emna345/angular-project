@@ -1,0 +1,294 @@
+<nav class="navbar navbar-expand-lg navbar-light">
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+   <div class="row">
+    <div class="mb-3 row">
+      <div class="col-md-6">
+
+    <select class="custom-select"[(ngModel)]="selectedUserId"  >
+      <option selected>select un athléte</option>
+      <option *ngFor="let user of users"[value]="user.id" >{{user.nom}}&nbsp;{{user.prenom}}</option>
+      
+    </select></div>
+ 
+    <div class="col-md-6">
+      <button class="btn btn-success" (click)="updatemodal(selectedUserId)"  style="width:200px; height:50px; margin-left: 300px;">Mise à jour</button>
+
+    </div>
+  </div>
+  </div>
+  </div>
+</nav>
+
+
+<div   class="container" style="margin-bottom: 50px;  margin-top: 50px;">
+  <div class="row">
+    <div class="col-md-6">
+      <form class="">
+        <div class="mb-4">
+          <div class="col" style="margin-bottom: 40px; margin-left: 600px;">
+            <h6>Date:</h6>
+            <input type="date" [(ngModel)]="selectedDate"(ngModelChange)="onDateSelected()" class="form-control"(change)="onSelectUser()">
+          </div>
+          <h2 style="color: #2596be; font-size: 30px; font-weight: normal; margin-left: 300px; letter-spacing: 0.5em;">Acts Médicaux</h2>
+        </div>
+    
+        <div class="mb-3 row">
+          <div class="col-md-8">
+            <label for="encographie" class="form-label"><h2>Echographie:</h2></label>
+            <!--input type="text" class="form-control" id="encographie" style="width:1000px;"  [(ngModel)]="ecographie" [ngModelOptions]="{standalone: true}"-->
+          </div>
+          <div class="mb-3 row">
+            <div class="col-md-6">
+              <label for="nfsTest" class="form-label">Echographie Abdominal:</label>
+              <textarea type="text" class="form-control" id="encographie"   [(ngModel)]="echographieabdo" [ngModelOptions]="{standalone: true}"></textarea>
+            </div>
+            <div class="col-md-6">
+              <label for="nfsTest" class="form-label">Echographie Vasculaire:</label>
+              <textarea type="text" class="form-control" id="encographie"   [(ngModel)]="echographievascu" [ngModelOptions]="{standalone: true}"></textarea>
+            </div></div>
+            <div class="mb-3 row">
+              <div class="col-md-6">
+                <label for="nfsTest" class="form-label">Echographie musculo_squelettique:</label>
+                <textarea type="text" class="form-control" id="encographie"  [(ngModel)]="echographiemusculo" [ngModelOptions]="{standalone: true}"></textarea>
+              </div>
+              <div class="col-md-6">
+                <label for="nfsTest" class="form-label">Echographie cardiaque:</label>
+                <textarea type="text" class="form-control" id="encographie"   [(ngModel)]="echographiecaradiaque" [ngModelOptions]="{standalone: true}"></textarea>
+              </div></div>
+              <div class="mb-3 row">
+                <div class="col-md-6">
+                  <label for="nfsTest" class="form-label">Echographie des parties molles:</label>
+                  <textarea type="text" class="form-control" id="encographie"  [(ngModel)]="echographiepartie" [ngModelOptions]="{standalone: true}"></textarea>
+                </div></div>
+               
+          <div class="col-md-8">
+            <label for="testBiologique" class="form-label"><h2>Test Biologique:</h2></label>
+            <input type="text" class="form-control" id="testBiologique" style="width:1000px;" [(ngModel)]="testbiologique" [ngModelOptions]="{standalone: true}">
+          </div>
+        </div>
+    
+        <div class="mb-4">
+          <h2>Bilan Biologique:</h2>
+        </div>
+    
+        <div class="mb-3 row">
+          <div class="col-md-6">
+            <label for="nfsTest" class="form-label">NFS Test</label>
+            <input type="text" class="form-control" id="nfsTest" [(ngModel)]="nfstest" [ngModelOptions]="{standalone: true}">
+          </div>
+    
+          <div class="col-md-6">
+            <label for="testGlycineAgene" class="form-label">Test glycine agene</label>
+            <!--input type="text" class="form-control" id="testGlycineAgene" [(ngModel)]="testglycine" [ngModelOptions]="{standalone: true}"-->
+         <textarea type="text" class="form-control" id="testGlycineAgene" [(ngModel)]="testglycine" [ngModelOptions]="{standalone: true}">Test glycine agene</textarea>
+          </div>
+        </div>
+    
+        <div class="mb-3 row">
+          <div class="col-md-6">
+            <label for="testDuree" class="form-label">Test d'urée</label>
+            <input type="text" class="form-control" id="testDuree" [(ngModel)]="testdurre" [ngModelOptions]="{standalone: true}">
+          </div>
+    
+          <div class="col-md-6">
+            <label for="testCreate" class="form-label">Test créate</label>
+            <input type="text" class="form-control" id="testCreate"  [(ngModel)]="testcreate" [ngModelOptions]="{standalone: true}">
+          </div>
+        </div>
+    
+        <div class="mb-3 row">
+          <div class="col-md-6">
+            <label for="testAsate" class="form-label">Test ASAT</label>
+            <input type="text" class="form-control" id="testAsate" [(ngModel)]="testasat" [ngModelOptions]="{standalone: true}">
+          </div>
+    
+          <div class="col-md-6">
+            <label for="testAlAt" class="form-label">Test ALAT</label>
+            <input type="text" class="form-control" id="testAlAt"  [(ngModel)]="testalat" [ngModelOptions]="{standalone: true}">
+          </div>
+        </div>
+    
+ 
+    <div class="mb-4">
+      <h2>Les Allergies:</h2>
+    </div>
+  
+    <div class="mb-3 row">
+      <div class="col-md-6">
+        <label  class="form-label">Allergies alimentaires:</label>
+        <input type="text" name="allergieAlimentaire" class="form-control" id="allergieAlimentaire" [(ngModel)]="allergiealiment" [ngModelOptions]="{standalone: true}">
+      </div>
+  
+      <div class="col-md-6">
+        <label  class="form-label">Allergies aux médicaments:</label>
+        <input type="text"name="allergieMedicament" class="form-control" id="allergieMedicament" [(ngModel)]="allergiemedica " [ngModelOptions]="{standalone: true}">
+      </div>
+    </div>
+  
+    <div class="mb-3 row">
+      <div class="col-md-6">
+        <label  class="form-label">Allergies respiratoires:</label>
+        <input type="text" name="allergieRespiratoire" class="form-control" id="allergieRespiratoire" [(ngModel)]="allergieRespiratoire" [ngModelOptions]="{standalone: true}">
+      </div>
+  
+      <div class="col-md-6">
+        <label  class="form-label">Allergies aux animaux:</label>
+        <input type="text" name="allergieAnimaux" class="form-control" id="allergieAnimaux" [(ngModel)]="allergieAnimaux" [ngModelOptions]="{standalone: true}">
+      </div>
+    </div>
+  
+
+        <div class="mb-3 d-flex justify-content-start">
+          <div style="margin-right: 10px;">
+          </div>
+          <div>
+            <button type="submit" class="btn btn-next" (click)="envoyer(selectedUserId)">Envoyer</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    
+
+</div>
+</div>
+
+<ng-template #modalContent let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Modification</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form class="" >
+      <div class="mb-4">
+        <div class="col" >
+          <h6>Date:</h6>
+          <input type="date" [(ngModel)]="bilans.selectedDate" class="form-control">
+        </div> 
+      </div>
+
+     
+      <div class="mb-3 row">
+        <div class="col-md-8">
+          <label for="encographie" class="form-label"><h2>Echographie:</h2></label>
+        </div></div>
+        <div class="mb-3 row">
+          <div class="col-md-6">
+            <label for="nfsTest" class="form-label">Echographie Abdominal:</label>
+            <textarea type="text" class="form-control" id="encographie"   [(ngModel)]="bilans.echographieabdo" [ngModelOptions]="{standalone: true}"></textarea>
+          </div></div>
+          <div class="mb-3 row">
+          <div class="col-md-6">
+            <label for="nfsTest" class="form-label">Echographie Vasculaire:</label>
+            <textarea type="text" class="form-control" id="encographie"   [(ngModel)]="bilans.echographievascu" [ngModelOptions]="{standalone: true}"></textarea>
+          </div></div>
+          <div class="mb-3 row">
+            <div class="col-md-6">
+              <label for="nfsTest" class="form-label">Echographie musculo_squelettique:</label>
+              <textarea type="text" class="form-control" id="encographie"  [(ngModel)]="bilans.echographiemusculo" [ngModelOptions]="{standalone: true}"></textarea>
+            </div></div>
+            <div class="mb-3 row">
+            <div class="col-md-6">
+              <label for="nfsTest" class="form-label">Echographie cardiaque:</label>
+              <textarea type="text" class="form-control" id="encographie"   [(ngModel)]="bilans.echographiecaradiaque" [ngModelOptions]="{standalone: true}"></textarea>
+            </div></div>
+            <div class="mb-3 row">
+              <div class="col-md-6">
+                <label for="nfsTest" class="form-label">Echographie des parties molles:</label>
+                <textarea type="text" class="form-control" id="encographie"  [(ngModel)]="bilans.echographiepartie" [ngModelOptions]="{standalone: true}"></textarea>
+              </div></div>
+              <div class="mb-3 row">
+      <div class="col-md-8">
+        <label for="testBiologique" class="form-label"><h2>Test Biologique:</h2></label>
+        <input type="text" class="form-control" id="testBiologique"   [(ngModel)]="bilans.testbiologique"[ngModelOptions]="{standalone: true}">
+      </div></div>
+    
+  
+
+ 
+      <div class="mb-4">
+        <h2>Bilan Biologique:</h2>
+      </div>
+
+      <div class="mb-3 row">
+        <div class="col-md-6">
+          <label for="nfsTest" class="form-label">NFS Test</label>
+          <input type="text" class="form-control" id="nfsTest"  [(ngModel)]="bilans.nfstest"[ngModelOptions]="{standalone: true}">
+        </div></div>
+        <div class="mb-3 row">
+        <div class="col-md-6">
+          <label for="testGlycineAgene" class="form-label">Test glycine agene</label>
+          <input type="text" class="form-control"  id="testGlycineAgene"  [(ngModel)]="bilans.testglycine"[ngModelOptions]="{standalone: true}">
+        </div>
+      </div>
+
+      <div class="mb-3 row">
+        <div class="col-md-6">
+          <label for="testDuree" class="form-label">Test d'urée</label>
+          <input type="text" class="form-control" id="testDuree" [(ngModel)]="bilans.testduree"[ngModelOptions]="{standalone: true}">
+        </div></div>
+        <div class="mb-3 row">
+        <div class="col-md-6">
+          <label for="testCreate" class="form-label">Test créate</label>
+          <input type="text" class="form-control" id="testCreate" [(ngModel)]="bilans.testcreat"[ngModelOptions]="{standalone: true}">
+        </div>
+      </div>
+
+      <div class="mb-3 row">
+        <div class="col-md-6">
+          <label for="testAsate" class="form-label">Test ASAT</label>
+          <input type="text" class="form-control" id="testAsate"  [(ngModel)]="bilans.testasat"[ngModelOptions]="{standalone: true}">
+        </div></div>
+        <div class="mb-3 row">
+        <div class="col-md-6">
+          <label for="testAlAt" class="form-label">Test ALAT</label>
+          <input type="text" class="form-control" id="testAlAt" [(ngModel)]="bilans.testalat"[ngModelOptions]="{standalone: true}">
+        </div>
+      </div>
+       
+      
+ 
+    <div class="mb-4">
+      <h2>Les Allergies:</h2>
+    </div>
+  
+    <div class="mb-3 row">
+      <div class="col-md-6">
+        <label  class="form-label">Allergies alimentaires:</label>
+        <input type="text" name="allergieAlimentaire" class="form-control" id="allergieAlimentaire" [(ngModel)]="bilans.allergiealiment" [ngModelOptions]="{standalone: true}">
+      </div></div>
+      <div class="mb-3 row">
+      <div class="col-md-6">
+        <label  class="form-label">Allergies aux médicaments:</label>
+        <input type="text"name="allergieMedicament" class="form-control" id="allergieMedicament" [(ngModel)]="bilans.allergiemedica " [ngModelOptions]="{standalone: true}">
+      </div>
+    </div>
+  
+    <div class="mb-3 row">
+      <div class="col-md-6">
+        <label  class="form-label">Allergies respiratoires:</label>
+        <input type="text" name="allergieRespiratoire" class="form-control" id="allergieRespiratoire" [(ngModel)]="bilans.allergieRespiratoire" [ngModelOptions]="{standalone: true}">
+      </div></div>
+      <div class="mb-3 row">
+      <div class="col-md-6">
+        <label  class="form-label">Allergies aux animaux:</label>
+        <input type="text" name="allergieAnimaux" class="form-control" id="allergieAnimaux" [(ngModel)]="bilans.allergieAnimaux" [ngModelOptions]="{standalone: true}">
+      </div>
+    </div>
+  
+
+      
+      
+      
+      
+  
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-primary" (click)="updateUser(selectedUserId,selectedDate)">Sauvgarder</button>
+
+    <button type="button" class="btn btn-secondary" (click)="modal.close('Close click')">fermer</button>
+  </div>
+</ng-template>
+       

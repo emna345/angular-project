@@ -1,0 +1,46 @@
+
+
+<div class="container">
+  <h1>Mon Profile</h1>
+
+  <div class="row">
+    <div class="col">
+      <label for="firstName">Nom</label>
+      <input type="text" id="firstName" class="form-control"value="{{user.nom}}" [(ngModel)]="user.nom" >
+    </div>
+    <div class="col">
+      <label for="lastName">Prénom:</label>
+      <input type="text" id="lastName" class="form-control" value="{{user.prenom}}"[(ngModel)]="user.prenom" >
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <label for="dateOfBirth">Date de naissance</label>
+      <input type="date" id="dateOfBirth" class="form-control" value="{{user.date}}"[(ngModel)]="user.date" >
+    </div>
+    <div class="col">
+      <label for="email">Email:</label>
+      <input type="email" id="email" class="form-control" [(ngModel)]="user.email" >
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <label for="password">Mot de passe</label>
+      <input type="password" id="password" class="form-control" [(ngModel)]="user.mdp" >
+    </div>
+    <div class="col">
+      <label for="phoneNumber">Numéro de téléphone</label>
+      <input type="tel" id="phoneNumber" class="form-control" [(ngModel)]="user.tel" >
+    </div>
+  </div>
+
+  <div class="row mt-3">
+    <div class="col">
+      <button class="btn btn-primary" (click)="updateUser()">
+        Mise à jour
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,71 @@
+
+<nav>
+  <div class="col-md-4">
+        
+    <h6>Date:</h6>
+    <input type="date" [(ngModel)]="selectedDate" (ngModelChange)="onDateSelected()"class="form-control" style="width: 700px;">
+  </div>
+
+</nav>
+
+
+<div class="container">
+  <h4 style="margin-top: 30px;">Temps D'entrainement</h4>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Heure</th>
+        <th scope="col">Heure</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>de &nbsp;&nbsp;&nbsp;{{plans.heureentrainement}}</td>
+        <td>à  &nbsp;&nbsp;&nbsp;{{plans.heureentrain}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="d-flex justify-content-between flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h4>Temps de repas:</h4>
+  </div>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Heure matin</th>
+        <th scope="col">Heure apres-midi</th>
+        <th scope="col">Heure soir</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{plans.heurerepasmatin}}</td>
+        <td>{{plans.heurerepasaprmidi}}</td>
+        <td>{{plans.heurerepassoir}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="d-flex justify-content-between flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h4>Horaire De Sommeil</h4>
+  </div>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Heure de se réveiller</th>
+        <th scope="col">L'heure de dormir</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{plans.heuresommeilmatin}}</td>
+        <td>{{plans.heuresommeilnuit}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+

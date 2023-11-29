@@ -1,0 +1,39 @@
+
+
+
+<header class="pb-5 overflow-hidden bg-white">
+  <div class="container">
+    <div class="row py-5 align-items-center">
+      <div class="col-sm-6 text-lg-start">
+        <a href="#" class="navbar-brand text-white">
+          SuiviTechnique
+        </a>
+      </div>
+      <div class="col-sm-6 d-none d-md-flex text-white align-items-center justify-content-end">
+        <a class="nav-link" aria-current="page" (click)="goTohome() " style="background-color:#ffffff;"><i class="fa-solid fa-house"></i>&nbsp;&nbsp;<span>Home</span></a>
+        <a class="nav-link" aria-current="page" (click)=" goToPlaningjour()" style="background-color:#ffffff;">Planing Du jour</a>
+        <a class="nav-link" aria-current="page" style="background-color: #ffffff;" (click)="goToPlaningannuel()">Planing annuel</a>
+        <a href="/logout" class="nav-link"  style="background-color: whitesmoke;" >
+          <i class="fa-solid fa-arrow-right-from-bracket" style="color: black; margin-right: 10px;"></i>Deconnexion
+        </a>
+
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="container main-container" >
+  <div class="row">
+
+    <main class=" ms-sm-auto">
+      <div class="d-flex justify-content-between flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2">Bienvenue Dans la page suivi technique</h1> 
+      </div>
+      <div class="main-content">
+        <ng-container *ngComponentOutlet="currentComponent"></ng-container>
+      </div>
+    </main>
+  </div>
+</div>
+
+

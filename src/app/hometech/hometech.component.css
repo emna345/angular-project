@@ -1,0 +1,46 @@
+/*@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital@1&display=swap');*/
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap');
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+   
+  }
+  h5{
+
+    font-family: 'EB Garamond', serif;
+
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+    
+   
+  
+  }
+  
+  .col-md-3 {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .container {
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Center horizontally */
+  
+   
+  }
+  .card{
+    height: 150px;
+    border-radius: 20px;
+  }
+  a{
+   text-decoration: none;
+  
+    
+  }
+  .card-title{
+    margin-top: 30px;
+    font-size: 22px;
+    color: white;
+  }
+  

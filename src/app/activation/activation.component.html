@@ -1,0 +1,96 @@
+
+
+<div class="container">
+    <h4 style="margin-top: 30px;">les athlétes</h4>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col" style="text-align: center !important;">id</th>
+          <th scope="col" style="text-align: center !important;">Nom</th>
+          <th scope="col" style="text-align: center !important;">Prenom</th>
+          <th scope="col" style="text-align: center !important;">tel</th>
+          <th scope="col" style="text-align: center !important;">email</th>
+          <th scope="col" style="text-align: center !important;">genre</th>
+          <th scope="col" style="text-align: center !important;">rôle</th>
+          <th scope="col" style="text-align: center !important;">entraineur</th>
+          <th scope="col" style="text-align: center !important;">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of athletes">
+          <td style="text-align: center !important;">{{user.id}}</td>
+          <td style="text-align: center !important;">{{user.nom}}</td>
+          <td style="text-align: center !important;">{{user.prenom}}</td>
+          <td style="text-align: center !important;">{{user.tel}}</td>
+          <td style="text-align: center !important;">{{user.email}}</td>
+          <td style="text-align: center !important;">{{user.genre}}</td>
+          <td style="text-align: center !important;">{{user.role}}</td>
+          <td style="text-align: center !important;">
+            <ng-container *ngIf="user.identraineur">
+              {{getCoachFullName(user.identraineur)}}
+            </ng-container>
+            <ng-container *ngIf="!user.identraineur">
+              Aucun entraîneur assigné
+            </ng-container>
+          </td>
+          
+          <td style="text-align: center !important;">
+            <button class="btn btn-primary"(click)="openModal(user)" style="margin-right: 10px;">
+              <i class="fa fa-pencil"></i> 
+              </button>
+              
+              
+           
+          </td>
+        </tr>
+      </tbody>
+      
+      </table>
+      </div>
+
+
+      <ng-template #modalContent let-modal>
+        <div class="modal-header">
+          <h4 class="modal-title" id="modal-basic-title">Affecter athlète</h4>
+          <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3 row">
+                <div class="col-md-6">
+            <label for="nom" class="form-label">Nom</label>
+            <input type="text" class="form-control" id="nom" name="nom" value="{{user.nom}}"[(ngModel)]="user.nom" required disabled>
+          </div>
+          <div class="col-md-6">
+            <label for="prenom" class="form-label">Prénom</label>
+            <input type="text" class="form-control" id="prenom" name="prenom" value="{{user.prenom}}"[(ngModel)]="user.prenom" required disabled>
+          </div>
+        </div>
+         
+         
+         
+          <div class="mb-3 row">
+            <div class="col-md-6">
+              <label for="role" class="form-label">Rôle</label>
+          
+              <input type="text" class="form-control" id="role" name="role" value="{{user.role}}"[(ngModel)]="user.role" required disabled>
+            </div>
+            <div class="col-md-6">
+              <label for="prenom" class="form-label">Entraîneur</label>
+              <select class="custom-select" name="selectedEntraineur"[(ngModel)]="selectedEntraineurId">
+                <option selected>selectionner un entraîneur</option>
+                <option *ngFor="let user of entraineurs" [value]="user.id">{{user.nom}}&nbsp;{{user.prenom}}</option>
+              </select>
+            </div>
+            
+          </div>
+          
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" (click)="updateUser(user)">Sauvegarder</button>
+            <button type="button" class="btn btn-secondary" (click)="modal.close('Close click')">Fermer</button>
+          </div>
+            </form>
+                </div>
+              </ng-template>

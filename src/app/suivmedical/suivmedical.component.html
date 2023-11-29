@@ -1,0 +1,69 @@
+<html>
+
+  <title>Dashboard</title>
+  <body>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-3 sidebar shadow-lg">
+        <div class="circle">
+          <h4 style="margin-left: 27px;">Nom d'un athlete</h4>
+        </div>
+        <div>
+          <h5>Type d'entrainement</h5>
+        </div>
+        <hr>
+        <ul class="nav flex-column" style="margin-top: 30px;">
+          <li class="nav-item">
+            <a class="nav-link active" href="#"><i class="fas fa-home"></i> Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/suivmedical/plan-an-ath"><i class="fas fa-calendar-alt"></i> Planning du jour</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/suivmedical/paln-jour-ath"><i class="fas fa-calendar"></i> Planning annuel</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fas fa-user"></i> Profile</a>
+          </li>
+          <hr>
+          <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fas fa-sign-out-alt"></i> Log out</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col content">
+        <h1 class="dashboard-title">Dashboard</h1>
+        <div class="row">
+          <router-outlet></router-outlet>
+          <div class="col-md-6">
+            <div class="card" style="background-color: black; ">
+              <h5 class="card-title" style=" color: #fff;  text-shadow: 2px 2px 4px #fff;">Today's Plan</h5>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card">
+              <h5 class="card-title" style=" text-shadow: 2px 2px 3px #000000;">Annual Plan</h5>
+            
+            </div>
+          </div>
+       
+       
+          <div class="col-md-6">
+            <div class="card">
+              <h5 class="card-title"  style="  text-shadow: 2px 2px 4px #000000;">Profile</h5>
+             
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card" style="background-color: black; ">
+              <h5 class="card-title" style=" color: #fff; text-shadow: 2px 2px 4px #fff;">Settings</h5>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+  
+</body>
+  </html>

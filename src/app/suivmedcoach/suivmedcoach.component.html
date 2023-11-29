@@ -1,0 +1,200 @@
+<nav class="navbar navbar-expand-lg navbar-light">
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item">
+          <input id="nameInput" class="form-control" type="text" placeholder="Nom Prenom" aria-label="Name">
+        </li>
+      </ul>
+      <div class="search">
+        <i class="fa fa-search"></i>
+        <input id="searchInput" type="text" class="form-control" placeholder="recherche id d'un athlete">
+        <button class="btn btn-primary">Rechercher</button>
+      </div>
+    </div>
+  </nav>
+  
+<div class="container" style="margin-bottom: 50px; margin-top: 50px;">
+    <div class="row">
+      <div class="col-md-6">
+        <form class="">
+        
+          <div class="mb-4">
+            <h1>Bilan Nutritionnel</h1>
+          </div>
+  
+          <div class="mb-3 row">
+            <div class="col-md-6">
+            <label for="nombre-entrainements" class="form-label">Nombre d'Entraînements par Semaine:</label>
+            <input type="text" class="form-control" id="nombre-entrainements">
+          </div>
+  
+          <div class="col-md-6">
+            <label for="duree-entrainements" class="form-label">Durée Moyenne des Entraînements:</label>
+            <input type="text" class="form-control" id="duree-entrainements">
+          </div></div>
+  
+          <div class="mb-4">
+            <h4>Habitudes Alimentaires:</h4>
+          </div>
+          <div class="mb-3 row">
+            <div class="col-md-6">
+            <label for="nombre-repas" class="form-label">Nombre de Repas par Jour:</label>
+            <input type="text" class="form-control" id="nombre-repas">
+          </div>
+          <div class="col-md-6">
+            <label for="aliments-consommes" class="form-label">Aliments Consommés lors des Repas:</label>
+            <input type="text" class="form-control" id="aliments-consommes">
+          </div></div>
+  
+          <div class="mb-3 row">
+            <div class="col-md-6">
+            <label for="allergies-alimentaires" class="form-label">Allergies Alimentaires:</label>
+            <input type="text" class="form-control" id="allergies-alimentaires">
+          </div>
+  
+          <div class="col-md-6">
+            <label for="qualite-sommeil" class="form-label">Qualité du Sommeil:</label>
+            <input type="text" class="form-control" id="qualite-sommeil">
+          </div></div>
+  
+          <div class="mb-4">
+            <h4>Prise de Médicaments ou de Suppléments Alimentaires:</h4>
+          </div>
+  
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Jour</th>
+                <th>Heure</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><input type="date" placeholder="00-00-0000"></td>
+                <td><input type="text" placeholder=""></td>
+                <td><input type="time" placeholder="00:00"></td>
+              </tr>
+            </tbody>
+          </table>
+
+
+
+
+<hr>
+
+
+
+
+
+          <div class="mb-4">
+          <h1>bilan d'effort maximal</h1>
+          </div>
+          <table class="table">
+              <thead>
+                <tr>
+                  <th>Type d'accident</th>
+                  <th>Observation</th>
+                  <th>Date d'accident</th>
+                  <th>Prise de repas</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><input type="text" placeholder=""></td>
+                  <td><input type="text" placeholder=""></td>
+                  <td><input type="date" placeholder=""></td>
+                  <td><input type="text" placeholder=""></td>
+                </tr>
+              </tbody>
+            </table>
+
+
+
+
+
+
+
+
+  <!----
+          <div class="mb-4">
+            <h3>Examen Clinique</h3>
+          </div>
+  
+          <div class="mb-3 row">
+            <div class="col-md-6">
+            <h4>ECOGRAPHIE CARDIAQUE:</h4>
+            <input type="text" class="form-control" >
+          </div>
+          <div class="col-md-6">
+            <h4>TEST BIOLOGIQUE:</h4>
+            <input type="text" class="form-control" >
+          </div>
+          </div>
+
+          <div class="mb-3">
+            <h4>BILAN BIOLOGIQUE:</h4>
+          
+          </div>
+          <div class="mb-3 row">
+            <div class="col-md-6">
+            <label for="age" class="form-label">NFS Test</label>
+            <input type="text" class="form-control" >
+          </div>
+  
+          <div class="col-md-6">
+            <label for="taille" class="form-label">Test glycine agene</label>
+            <input type="text" class="form-control" >
+          </div>
+  </div>
+  <div class="mb-3 row">
+    <div class="col-md-6">
+    <label for="age" class="form-label">Test d'urée</label>
+    <input type="text" class="form-control" >
+  </div>
+
+  <div class="col-md-6">
+    <label for="taille" class="form-label">Test créate</label>
+    <input type="text" class="form-control" >
+  </div>
+</div>
+<div class="mb-3 row">
+    <div class="col-md-6">
+    <label for="age" class="form-label">Test ASAT</label>
+    <input type="text" class="form-control" >
+  </div>
+
+  <div class="col-md-6">
+    <label for="taille" class="form-label">Test ALAT</label>
+    <input type="text" class="form-control" >
+  </div>
+</div>
+  
+          <div class="mb-4">
+            <h3>Examen Physique</h3>
+          </div>
+  
+          <div class="mb-3 row">
+            <div class="col-md-6">
+            <label for="age" class="form-label">Age:</label>
+            <input type="text" class="form-control" id="age">
+          </div>
+  
+          <div class="col-md-6">
+            <label for="taille" class="form-label">Taille:</label>
+            <input type="text" class="form-control" id="taille">
+          </div>
+  </div>
+          <div class="mb-3 row">
+             <div class="col-md-8">
+            <label for="poids" class="form-label">Poids:</label>
+            <input type="text" class="form-control" id="poids">
+          </div></div>
+        -->
+  
+  
+        </form>
+      </div>
+    </div>
+  </div>
+  

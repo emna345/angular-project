@@ -1,0 +1,98 @@
+
+
+.carousel {
+  margin-top: -595px;
+}
+
+@media (max-width: 768px) {
+  .carousel {
+    margin-top: -72px;
+  }
+}
+
+img {
+  width: 100%;
+  height: 50%;
+}
+
+.rounded {
+  border-radius: 0.55rem!important;
+  width: 290px;
+  height: 250px;
+  margin-left: -0px;
+  margin-top: 0px;
+}
+
+.container,
+.container-sm {
+  margin-top: 20px; 
+  max-width: 1140px;
+  margin-left: 70px;
+  display: flex;
+  justify-content: space-between;
+  position: center;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: 0px;
+  word-wrap: break-word;
+  background-color: #8db38e;
+  background-clip: border-box;
+  border: 3px solid #000000ad;
+  border-radius: 1.25rem;
+  margin-left: 19px;
+}
+
+.card:hover {
+  background-attachment: unset;
+}
+
+.card-img-top {
+  width: auto;
+  height: auto;
+}
+
+.card-title {
+  margin-bottom: 0.95rem;
+  color: rgb(218, 30, 30);
+}
+
+.btn-primary {
+  background-color: firebrick;
+  border-color: #000;
+}
+
+.btn-primary:hover {
+  background-color: rgba(2, 1, 1, 0.918);
+}
+
+.carousel-caption {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  color: white;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.carousel-caption h3,
+.carousel-caption p {
+  margin: 0;
+}
+
+.carousel img {
+  max-height: 400px;
+  object-fit: cover;
+}
+
+
+
+app-select div[ngbDropdownMenu] {
+  z-index: 1000;
+}
+

@@ -1,0 +1,104 @@
+<nav class="navbar navbar-expand-lg navbar-light">
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+    <select class="custom-select"[(ngModel)]="selectedUserId">
+      <option selected>select un athléte</option>
+      <option *ngFor="let user of users"[value]="user.id" >{{user.nom}}&nbsp;{{user.prenom}}</option>
+      
+    </select>
+
+    
+  </div>
+</nav>
+<div class="col" style="margin-bottom: 40px; margin-left: 600px; margin-top: 20px;">
+  <h6>Date:</h6>
+  <input type="date" [(ngModel)]="dateexamen" [ngModelOptions]="{standalone: true}" class="form-control"(change)="onSelectUser()">
+</div>
+<div class="mb-4">
+<h2 style="color: #2596be; font-size: 30px; font-weight: normal; margin-left: 230px; letter-spacing: 0.5em;">Mesure anthropométrie</h2>
+</div>
+
+<div class="container" style="margin-bottom: 50px; margin-top: 10px;">
+  <div class="row">
+    <div class="col-md-12" >
+      <div class="shadow-lg p-4">
+      
+        <form>
+         
+          <h2>Taper les mesures de votre corps?</h2>
+          
+
+          <div class="mb-3">
+            <label for="taille" class="form-label">Taille (cm)</label>
+            <input type="text" class="form-control" id="taille"  [(ngModel)]="taille"[ngModelOptions]="{standalone: true}"  (input)="calculateIMC()"  (change)="calculateIMC()">
+          </div>
+
+          <div class="mb-3">
+            <label for="poids" class="form-label">Poids</label>
+            <input type="text" class="form-control" id="poids"  [(ngModel)]="poids"[ngModelOptions]="{standalone: true}"  (input)="calculateIMC()"  (change)="calculateIMC()">
+          </div>
+          <div class="mb-3">
+            <label for="imc" class="form-label">IMC</label>
+            <input type="number" class="form-control" id="imc" [(ngModel)]="imc" [ngModelOptions]="{ standalone: true }" readonly>
+        </div>
+        <div *ngIf="athleteState">
+          <p>Athlete's State: {{ athleteState }}</p>
+        </div>
+        
+          <div class="mb-3">
+            <button type="submit" class="btn btn-primary" (click)="envoyer(selectedUserId)">Envoyer</button>
+            <button class="btn btn-primary" (click)="open(modalContent)">Mise à jour</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<ng-template #modalContent let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Modification</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="col">
+        <h6>Date:</h6>
+        <input type="date" [(ngModel)]="bilans.dateexamen" [ngModelOptions]="{standalone: true}" class="form-control">
+      </div>
+      <h2></h2>
+          
+
+          <div class="mb-3">
+            <label for="taille" class="form-label">Taille (cm)</label>
+            <input type="text" class="form-control" id="taille"  [(ngModel)]="bilans.taille"[ngModelOptions]="{standalone: true}"  (input)="calculateIMC()"  (change)="calculateIMC()" >
+          </div>
+
+          <div class="mb-3">
+            <label for="poids" class="form-label">Poids</label>
+            <input type="text" class="form-control" id="poids"  [(ngModel)]="bilans.poids"[ngModelOptions]="{standalone: true}"  (input)="calculateIMC()"  (change)="calculateIMC()">
+          </div>
+          <div class="mb-3">
+            <label for="imc" class="form-label">IMC</label>
+            <input type="number" class="form-control" id="imc" [(ngModel)]="bilans.imc" [ngModelOptions]="{ standalone: true }" readonly>
+       
+          </div>
+
+          <div *ngIf="bilans">
+            <p>Athlete's State: {{ getAthleteState(bilans.imc) }}</p>
+          </div>
+         
+          
+</form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-primary" (click)="updateUser(selectedUserId,dateexamen)">sauvgarder</button>
+
+    <button type="button" class="btn btn-primary" (click)="modal.close('Close click')">Fermer</button>
+  </div>
+</ng-template>
+
+
+ 

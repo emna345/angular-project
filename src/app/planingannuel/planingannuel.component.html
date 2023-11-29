@@ -1,0 +1,107 @@
+<nav class="navbar navbar-expand-lg navbar-light">
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+   <div class="row">
+    <div class="mb-3 row">
+      <div class="col-md-6">
+    <select class="custom-select" [(ngModel)]="selectedUserIds" (change)="onSelectUser()">
+      <option *ngIf="!selectAllAthletes" value="none" selected>Selectionner un athlète</option>
+      <option *ngIf="selectAllAthletes" [value]="'all'">Tous les athlètes</option>
+      <option *ngFor="let user of users" [value]="user.id">{{user.nom}}&nbsp;{{user.prenom}}</option>
+    </select></div>
+    <div class="col-md-6">
+
+      <button class="btn btn-next"(click)="open(modalContent)" style="margin-left: 450px;">
+        mise à jour
+      </button>
+    </div>
+    
+  </div>
+  </div>
+  </div>  
+ 
+</nav>
+ 
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="form-group">
+        <label for="type-entrainement">Evenement:</label>
+        <input type="text" id="type-entrainement" class="form-control" [(ngModel)]="typeven" [ngModelOptions]="{standalone: true}">
+      </div>
+    </div>
+    <div class="col">
+      <div class="form-group">
+        <label for="tournois-lieu">Lieu:</label>
+        <input type="text" id="tournois-lieu" class="form-control" [(ngModel)]="lieu" [ngModelOptions]="{standalone: true}">
+      </div>
+    </div>
+    <div class="col">
+      <div class="form-group">
+        <label for="tournois-date">Date:</label>
+        <input type="date" id="tournois-date" class="form-control" [(ngModel)]="date" [ngModelOptions]="{standalone: true}">
+      </div>
+    </div>
+    <div class="col">
+      <div class="form-group">
+        <label for="tournois-heure">Heure:</label>
+        <input type="time" id="tournois-heure" class="form-control" [(ngModel)]="heure" [ngModelOptions]="{standalone: true}">
+      </div>
+    </div>
+  </div>
+
+  <div class="mt-4">
+    <button type="button" class="btn btn-primary" (click)="envoyer()" style="margin-left: 20px;">Envoyer</button>
+ 
+  </div>
+</div>
+<ng-template #modalContent let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Modification</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form>
+  
+    
+  
+  
+      <div class="col">
+      <div class="form-group">
+        <label for="type-entrainement">Evenement</label>
+        <input type="text" id="type-entrainement" class="form-control" [(ngModel)]="bilans.typeven" [ngModelOptions]="{standalone: true}">
+      </div>
+    </div>
+    <div class="col">
+      <div class="form-group">
+        <label for="tournois-lieu">Lieu:</label>
+        <input type="text" id="tournois-lieu" class="form-control" [(ngModel)]="bilans.lieu" [ngModelOptions]="{standalone: true}">
+      </div>
+    </div>
+    <div class="col">
+      <div class="form-group">
+        <label for="tournois-date">Date:</label>
+        <input type="date" id="tournois-date" class="form-control" [(ngModel)]="bilans.date" [ngModelOptions]="{standalone: true}">
+      </div>
+    </div>
+    <div class="col">
+      <div class="form-group">
+        <label for="tournois-heure">Heure:</label>
+        <input type="time" id="tournois-heure" class="form-control" [(ngModel)]="bilans.heure" [ngModelOptions]="{standalone: true}">
+      </div>
+    </div>
+    
+ 
+  
+
+</form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-primary"style="height: 30px; width:300px;"  (click)=" updateUser(selectedUserIds)">Sauvgarder</button>
+
+    <button type="button" class="btn btn-next" style="height: 30px;width: 100px;" (click)="modal.close('Close click')">annuler</button>
+  </div>
+</ng-template>
+       
+     

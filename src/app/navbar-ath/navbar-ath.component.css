@@ -1,0 +1,48 @@
+
+*{
+    margin: 0;
+    padding: 0;
+
+}
+.bg-light {
+    background-color :#ffffff !important;;
+}
+.navbar-light .navbar-nav .nav-link {
+    color: #000000;
+  
+}
+
+.navbar-expand-lg .navbar-collapse {
+    
+    display: flex!important;
+    flex-basis: auto;
+    flex-direction: row-reverse;
+}
+
+
+.navbar-light .navbar-brand {
+    color: #505050;
+    font-family: Arabic Typesetting;
+    font-size: 30px;
+
+   
+}
+.nav-link{
+    font-weight: 500 !important;
+    text-transform: uppercase !important;
+    font-size: 14px;
+   
+}
+
+
+.container {
+    display: flex !important;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+
+
+

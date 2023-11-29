@@ -1,0 +1,46 @@
+
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-3 sidebar shadow-lg">
+        <div class="d-flex flex-column align-items-center">
+          <div class="profile-image">
+            <img src="/../assets/user.png" alt="Profile Image" class="rounded-circle" style="width: 120px; height: 120px; margin-left: 39px; margin-bottom: 15px; margin-top: 20px;">
+          </div></div>
+        <div>
+          <h5 class="align-items-center justify-content-center">{{this.user.prenom}} {{this.user.nom}}  </h5>
+
+        </div>
+        <hr>
+        <ul class="nav flex-column" style="margin-top: 30px;">
+        
+          <li class="nav-item">
+            <a class="nav-link" (click)="goToPlaning()"><i class="fas fa-calendar-alt"></i> Planning du jour</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="goToPlaningannuel()"><i class="fas fa-calendar"></i> Planning annuel</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"(click)="goToProfile()"><i class="fas fa-user"></i> Profile</a>
+          </li>
+          <hr>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/login" ><i class="fas fa-sign-out-alt"></i> Log out</a>
+          </li>
+        </ul>
+      </div>  
+      <div class="col main-content">
+        <main class="ms-sm-auto">
+          <div class="d-flex justify-content-between flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2">Dashboard </h1> 
+          </div>
+          <div class="content">
+            <ng-container *ngComponentOutlet="currentComponent"></ng-container>
+          </div>
+        </main>
+      </div>
+    </div>
+  </div>
+
+  
+

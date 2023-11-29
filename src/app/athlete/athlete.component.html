@@ -1,0 +1,103 @@
+
+<div class="container">
+  <h4 style="margin-top: 30px;">Utilisateur</h4>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col" style="text-align: center !important;">id</th>
+        <th scope="col" style="text-align: center !important;">Nom</th>
+        <th scope="col" style="text-align: center !important;">Prenom</th>
+        <th scope="col" style="text-align: center !important;">Telphone</th>
+        <th scope="col" style="text-align: center !important;">email</th>
+        <th scope="col" style="text-align: center !important;">genre</th>
+        <th scope="col" style="text-align: center !important;">rôle</th>
+        <th scope="col" style="text-align: center !important;">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td style="text-align: center !important;">{{user.id}}</td>
+        <td style="text-align: center !important;">{{user.nom}}</td>
+        <td style="text-align: center !important;">{{user.prenom}}</td>
+        <td style="text-align: center !important;">{{user.tel}}</td>
+        <td style="text-align: center !important;">{{user.email}}</td>
+        <td style="text-align: center !important;">{{user.genre}}</td>
+        <td style="text-align: center !important;">{{user.role}}</td>
+        <td style="text-align: center !important;">
+          <button class="btn btn-primary"(click)="openModal(user)" style="margin-right: 10px;">
+            <i class="fa fa-pencil"></i> 
+            </button>
+            
+            
+          <button class="btn btn-danger" (click)="deleteUser(user)">
+            <i class="fa fa-trash"></i> 
+          </button>
+        </td>
+      </tr>
+    </tbody>
+    
+  </table>
+</div>
+
+
+
+
+<ng-template #modalContent let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Modifier utilisateur</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="mb-3 row">
+          <div class="col-md-6">
+      <label for="nom" class="form-label">Nom</label>
+      <input type="text" class="form-control" id="nom" name="nom" value="{{user.nom}}"[(ngModel)]="user.nom" required>
+    </div>
+    <div class="col-md-6">
+      <label for="prenom" class="form-label">Prénom</label>
+      <input type="text" class="form-control" id="prenom" name="prenom" value="{{user.prenom}}"[(ngModel)]="user.prenom" required>
+    </div></div>
+    <div class="mb-3 row">
+      <div class="col-md-6">
+          <label for="dateNaissance" class="form-label">Date de naissance</label>
+          <input type="date" class="form-control" id="dateNaissance" name="dateNaissance" value="{{user.date}}"[(ngModel)]="user.date" required>
+    </div>
+    <div class="col-md-6">
+      <label for="email" class="form-label">Email</label>
+      <input type="email" class="form-control" id="email" name="email" value="{{user.email}}"[(ngModel)]="user.email" required>
+    </div></div>
+    <div class="mb-3 row"> 
+      <div class="col-md-6">
+      <label for="password" class="form-label">Mot de passe</label>
+      <input type="password" class="form-control" id="password" name="password" value="{{user.mdp}}" [(ngModel)]="user.mdp"required>
+    </div>
+    <div class="col-md-6">
+      <label for="telephone" class="form-label">Numéro de téléphone</label>
+      <input type="tel" class="form-control" id="telephone" name="telephone" value="{{user.tel}}"[(ngModel)]="user.tel" required>
+    </div></div>
+    <div class="mb-3 row">
+      <div class="col-md-6">
+        <label for="role" class="form-label">Rôle</label>
+        <select class="form-control" id="role" name="role" value="{{user.role}}"[(ngModel)]="user.role" required>
+          <option >athlète</option>
+          <option >entraîneur</option>
+          <option >coordinateur technique</option>
+        </select>
+      </div>
+    </div>
+    
+    <div class="modal-footer">
+      <button type="button" class="btn btn-primary" (click)="updateUser(user)">Sauvegarder</button>
+      <button type="button" class="btn btn-secondary" (click)="modal.close('Close click')">Fermer</button>
+    </div>
+      </form>
+          </div>
+        </ng-template>
+
+
+         
+     
+        

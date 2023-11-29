@@ -1,0 +1,46 @@
+<nav class="navbar navbar-expand navbar-dark bg-dark">
+    <div class="container">
+      
+  
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav">
+
+            <a class="nav-link"  href="/modal">Home</a>
+     
+         
+            <a class="nav-link" href="navbar">Suivi médical</a>
+       
+     
+            <a class="nav-link" href="/navbartech">Suivi technique</a>
+   
+
+            <a class="nav-link" href="profile">Profile</a>
+        
+         
+            <a class="nav-link"aria-current="page"   (click)="goToutilisateur()">Utilisateur</a>
+        
+         
+            <a class="nav-link" aria-current="page"   (click)="goToentraineur()">Affecter athlète</a>
+        
+        </ul>
+      </div>
+  
+      <a href="/logout" class="nav-link" style="color: #ffffff;">
+        <i class="fa fa-arrow-right-from-bracket"></i> Déconnexion
+      </a>
+    </div>
+  </nav>
+  
+
+  <div class="container">
+    <div class="row">
+  
+      <main class=" ms-sm-auto">
+        
+       
+        <div class="main-content">
+          <ng-container *ngComponentOutlet="currentComponent"></ng-container>
+        </div>
+      </main>
+    </div>
+  </div>

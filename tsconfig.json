@@ -22,7 +22,13 @@
     "lib": [
       "ES2022",
       "dom"
+    ],
+    "types":[
+      "jquery",
+      "jest",
+      "node"
     ]
+    
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
@@ -30,4 +36,6 @@
     "strictInputAccessModifiers": true,
     "strictTemplates": true
   }
+  
+  
 }

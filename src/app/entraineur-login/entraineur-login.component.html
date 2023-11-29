@@ -1,0 +1,20 @@
+<div class="modal-header">
+    <h4 class="modal-title">Entraineur Login</h4>
+    <button type="button" class="btn-close" (click)="modal.dismiss('Cross click')" aria-label="Close"></button>
+</div>
+<div class="modal-body">
+    <form>
+        <div class="mb-3">
+            <label for="username" class="form-label">Username</label>
+            <input type="text" class="form-control" id="username" [(ngModel)]="username" name="username" [ngModelOptions]="{standalone: true}">
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password" [(ngModel)]="password" name="password" [ngModelOptions]="{standalone: true}">
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="modal.dismiss('cancel')">Cancel</button>
+    <button type="button" class="btn btn-primary" (click)="login()">Login</button>
+</div>

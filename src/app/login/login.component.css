@@ -1,0 +1,50 @@
+.container{
+    margin-top:-650px;
+}
+body {
+    margin: 10px 10px 30px 10px;
+}
+.form-group{
+    width: 400px;
+    align-items: center;
+    justify-content: center;
+}
+h1 {
+    text-align: center;
+    color: #5f0177;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+hr{
+   
+    width: 500px;
+    align-items: center;
+    justify-content: center;
+    margin-left: 400px;
+}
+#pass,
+#user,
+#value1,
+#value2,
+#confirmPassword {
+    color: red;
+    display: none;
+}
+
+.input_values {
+    text-align: center;
+    color: #01725a;
+}
+
+#password {
+    -webkit-text-security: disc;
+}
+button{
+    background-color: transparent;
+    color: rgb(0, 13, 131);
+    text-decoration: underline;
+    border: 0px;
+    font-size: 12px;
+}
+.btn-primary{
+width: 200px;
+}
